@@ -12,6 +12,6 @@ def index(request):
         'birthday': '',
     }
 
-    if datetime.now().day == 18 and datetime.now().month == 8:
+    if datetime.now().day == 19 and datetime.now().month == 8:
         context['birthday'] = 'Happy Birthday Rony!!'
     return render(request, 'website/index.html', context=context)
