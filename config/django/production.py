@@ -7,7 +7,12 @@ from config.env import env
 DEBUG = False
 
 # ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
-ALLOWED_HOSTS = ['ronykoshy.com', 'www.ronykoshy.com']
+ALLOWED_HOSTS = [
+    'ronykoshy.com',
+    'www.ronykoshy.com',
+    'rony-django-production.up.railway.app',
+    'www.rony-django-production.up.railway.app'
+    ]
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
@@ -16,7 +21,12 @@ SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 # Railway settings? (I think)
-CSRF_TRUSTED_ORIGINS = []
+CSRF_TRUSTED_ORIGINS = [
+    'ronykoshy.com',
+    'www.ronykoshy.com',
+    'rony-django-production.up.railway.app',
+    'www.rony-django-production.up.railway.app'
+]
 
 
 # AWS
