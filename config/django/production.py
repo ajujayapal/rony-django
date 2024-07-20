@@ -1,0 +1,20 @@
+from .base import *
+from config.env import env
+
+
+# DEBUG = env.bool('DJANGO_DEBUG', default=False)
+
+DEBUG = False
+
+# ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
+ALLOWED_HOSTS = ['ronykoshy.com', 'www.ronykoshy.com']
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS = 1209600 # 2 WEEKS
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+
+# AWS
+from config.settings.file_storage import *
