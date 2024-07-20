@@ -22,10 +22,10 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 # Railway settings? (I think)
 CSRF_TRUSTED_ORIGINS = [
-    'ronykoshy.com',
-    'www.ronykoshy.com',
-    'rony-django-production.up.railway.app',
-    'www.rony-django-production.up.railway.app'
+    'https://ronykoshy.com',
+    'https://www.ronykoshy.com',
+    'https://rony-django-production.up.railway.app',
+    'https://www.rony-django-production.up.railway.app'
 ]
 
 
