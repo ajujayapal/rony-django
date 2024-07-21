@@ -25,7 +25,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://ronykoshy.com',
     'https://www.ronykoshy.com',
     'https://rony-django-production.up.railway.app',
-    'https://www.rony-django-production.up.railway.app'
+    'https://www.rony-django-production.up.railway.app',
 ]
 
 
