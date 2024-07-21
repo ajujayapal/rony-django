@@ -13,6 +13,7 @@ ALLOWED_HOSTS = [
     'rony-django-production.up.railway.app',
     'www.rony-django-production.up.railway.app'
     ]
+
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
@@ -32,3 +33,19 @@ CSRF_TRUSTED_ORIGINS = [
 # AWS
 # from config.settings.file_storage import *
 
+# Whitenoise
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# DATABASE
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('PG_DATABASE'),
+        'USER': env('PG_USER'),
+        'PASSWORD': env('PG_PASSWORD'),
+        'HOST': env('PG_HOST'),
+        'PORT': env('PG_PORT'),
+    }
+}
