@@ -1,1 +1,1 @@
-web: gunicorn config.wsgi:application -b :8080 --log-file -
+web: python manage.py migrage && gunicorn config.wsgi:application -b :8080 --log-file -
