@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn config.wsgi:application -b :8080 --log-file -
+web: python manage.py collectstatic && gunicorn config.wsgi:application -b :8080 --log-file -
