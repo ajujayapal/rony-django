@@ -14,12 +14,12 @@ ALLOWED_HOSTS = [
     'www.rony-django-production.up.railway.app'
     ]
 
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS = 1209600 # 2 WEEKS
-SECURE_HSTS_PRELOAD = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = True
+# SECURE_HSTS_SECONDS = 1209600 # 2 WEEKS
+# SECURE_HSTS_PRELOAD = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 # Railway settings? (I think)
 CSRF_TRUSTED_ORIGINS = [
@@ -27,6 +27,8 @@ CSRF_TRUSTED_ORIGINS = [
     'https://www.ronykoshy.com',
     'https://rony-django-production.up.railway.app',
     'https://www.rony-django-production.up.railway.app',
+    'http://rony-django-production.up.railway.app',
+    'http://www.rony-django-production.up.railway.app',
 ]
 
 
