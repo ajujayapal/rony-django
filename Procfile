@@ -1,1 +1,1 @@
-web: gunicorn config.wsgi:application --log-file -
+web: gunicorn config.wsgi:application -b :8080 --log-file -

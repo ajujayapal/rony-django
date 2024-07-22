@@ -11,7 +11,7 @@ ALLOWED_HOSTS = [
     'ronykoshy.com',
     'www.ronykoshy.com',
     'rony-django-production.up.railway.app',
-    'www.rony-django-production.up.railway.app'
+    'www.rony-django-production.up.railway.app',
     ]
 
 CSRF_COOKIE_SECURE = True
