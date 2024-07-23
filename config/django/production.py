@@ -14,30 +14,31 @@ ALLOWED_HOSTS = [
     'www.rony-django-production.up.railway.app',
     ]
 
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS = 1209600 # 2 WEEKS
-SECURE_HSTS_PRELOAD = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = True
+# SECURE_HSTS_SECONDS = 1209600 # 2 WEEKS
+# SECURE_HSTS_PRELOAD = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 # Railway settings? (I think)
-CSRF_TRUSTED_ORIGINS = [
-    'https://ronykoshy.com',
-    'https://www.ronykoshy.com',
-    'https://rony-django-production.up.railway.app',
-    'https://www.rony-django-production.up.railway.app',
-    'http://rony-django-production.up.railway.app',
-    'http://www.rony-django-production.up.railway.app',
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://ronykoshy.com',
+#     'https://www.ronykoshy.com',
+#     'https://rony-django-production.up.railway.app',
+#     'https://www.rony-django-production.up.railway.app',
+#     'http://rony-django-production.up.railway.app',
+#     'http://www.rony-django-production.up.railway.app',
+# ]
 
 
 # AWS
 # from config.settings.file_storage import *
 
 # Whitenoise
-STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+WHITENOISE_USE_FINDERS = True
+WHITENOISE_AUTOREFRESH = DEBUG
 
 # DATABASE
 
@@ -50,4 +51,22 @@ DATABASES = {
         'HOST': env('PG_HOST'),
         'PORT': env('PG_PORT'),
     }
+}
+
+# Appliku Documentation
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler'
+        }
+    },
+    'loggers': {
+        '': {
+            'handlers': ['console'],
+            'level': 'DEBUG'
+        }
+    },
 }
