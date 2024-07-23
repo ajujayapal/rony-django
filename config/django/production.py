@@ -14,6 +14,8 @@ ALLOWED_HOSTS = [
     'www.rony-django-production.up.railway.app',
     ]
 
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS')
+
 # CSRF_COOKIE_SECURE = True
 # SESSION_COOKIE_SECURE = True
 # SECURE_SSL_REDIRECT = True
@@ -42,15 +44,19 @@ WHITENOISE_AUTOREFRESH = DEBUG
 
 # DATABASE
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': env('PG_DATABASE'),
+#         'USER': env('PG_USER'),
+#         'PASSWORD': env('PG_PASSWORD'),
+#         'HOST': env('PG_HOST'),
+#         'PORT': env('PG_PORT'),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('PG_DATABASE'),
-        'USER': env('PG_USER'),
-        'PASSWORD': env('PG_PASSWORD'),
-        'HOST': env('PG_HOST'),
-        'PORT': env('PG_PORT'),
-    }
+    "default": env.db(default="sqlite:///db.sqlite3"),
 }
 
 # Appliku Documentation
